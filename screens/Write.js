@@ -3,6 +3,7 @@ import { Alert } from "react-native";
 import styled from "styled-components/native";
 import { useDB } from "../context";
 import colors from "../colors";
+import { AppOpenAd, TestIds } from "react-native-google-mobile-ads";
 
 const View = styled.View`
   background-color: ${colors.bgColor};
@@ -59,6 +60,7 @@ const EmotionText = styled.Text`
 const emotions = ["🤯", "🥲", "🤬", "🤗", "🥰", "😊", "🤩"];
 
 const Write = ({ navigation: { goBack } }) => {
+  const appOpenAd = AppOpenAd.createForAdRequest(TestIds.APP_OPEN);
   const realm = useDB();
   const [selectedEmotion, setEmotion] = useState(null);
   const [feelings, setFeelings] = useState("");
@@ -98,7 +100,14 @@ const Write = ({ navigation: { goBack } }) => {
         value={feelings}
         placeholder="Write your feelings..."
       />
-      <Btn onPress={onSubmit}>
+      <Btn
+        onPress={() => {
+          appOpenAd.load();
+          setTimeout(() => {
+            appOpenAd.show();
+          }, 1000);
+        }}
+      >
         <BtnText>Save</BtnText>
       </Btn>
     </View>

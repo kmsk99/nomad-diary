@@ -5,6 +5,7 @@ import Realm from "realm";
 import { NavigationContainer } from "@react-navigation/native";
 import Navigator from "./navigator";
 import { DBContext } from "./context";
+import { AppOpenAd, BannerAd, TestIds } from "react-native-google-mobile-ads";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -45,7 +46,7 @@ export default function App() {
 
   const onLayoutRootView = useCallback(async () => {
     if (ready) {
-      await SplashScreen.hideAsync();
+      await SplashScreen.hideAsync(); // Show the app open ad when user brings the app to the foreground.
     }
   }, [ready]);
 
@@ -55,6 +56,7 @@ export default function App() {
   return (
     <DBContext.Provider value={realm}>
       <NavigationContainer>
+        <BannerAd unitId={TestIds.BANNER} size="BANNER" />
         <Navigator />
         <View onLayout={onLayoutRootView} />
       </NavigationContainer>
