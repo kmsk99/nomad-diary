@@ -1,9 +1,10 @@
-import Realm from "realm";
-import { NavigationContainer } from "@react-navigation/native";
 import React, { useState, useEffect, useCallback } from "react";
-import Navigator from "./navigator";
 import * as SplashScreen from "expo-splash-screen";
 import { View } from "react-native";
+import Realm from "realm";
+import { NavigationContainer } from "@react-navigation/native";
+import Navigator from "./navigator";
+import { DBContext } from "./context";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -19,14 +20,15 @@ const FeelingSchema = {
 
 export default function App() {
   const [ready, setReady] = useState(false);
+  const [realm, setRealm] = useState(null);
   const startLoading = async () => {
-    const realm = await Realm.open({
+    const connection = await Realm.open({
       path: "nomadDiaryDB",
       schema: [FeelingSchema],
     });
+    setRealm(connection);
   };
   const onFinish = () => setReady(true);
-
   useEffect(() => {
     async function prepare() {
       try {
@@ -51,9 +53,11 @@ export default function App() {
     return null;
   }
   return (
-    <NavigationContainer>
-      <Navigator />
-      <View onLayout={onLayoutRootView} />
-    </NavigationContainer>
+    <DBContext.Provider value={realm}>
+      <NavigationContainer>
+        <Navigator />
+        <View onLayout={onLayoutRootView} />
+      </NavigationContainer>
+    </DBContext.Provider>
   );
 }
