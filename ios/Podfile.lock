@@ -312,6 +312,8 @@ PODS:
     - React-jsi (= 0.70.5)
     - React-logger (= 0.70.5)
     - React-perflogger (= 0.70.5)
+  - RealmJS (11.3.1):
+    - React
   - RNScreens (3.18.2):
     - React-Core
     - React-RCTImage
@@ -360,6 +362,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RealmJS (from `../node_modules/realm`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -450,6 +453,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RealmJS:
+    :path: "../node_modules/realm"
   RNScreens:
     :path: "../node_modules/react-native-screens"
   Yoga:
@@ -458,14 +463,14 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost: a7c83b31436843459a1961bfd74b96033dc77234
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
-  EXApplication: 034b1c40a8e9fe1bff76a1e511ee90dff64ad834
-  EXConstants: 3c86653c422dd77e40d10cbbabb3025003977415
-  EXErrorRecovery: ae43433feb0608a64dc5b1c8363b3e7769a9ea24
-  EXFileSystem: 60602b6eefa6873f97172c684b7537c9760b50d6
-  EXFont: 319606bfe48c33b5b5063fb0994afdc496befe80
+  EXApplication: 097fc9f58dd3921d7ce3f64157978a3523652a84
+  EXConstants: dc7a16230c5815fa80ed70b3a09aa7f2e2a94be3
+  EXErrorRecovery: 2f378e5c9aaaab8b09179da65080d958721f8a36
+  EXFileSystem: 509903f11b97b25b54d8f449d5c1fc49cb2172f4
+  EXFont: 955655aa111e20756af96d7c5c0b23add0cdc303
   Expo: a694d89d2461fdfc6b977bf489bf7d341ed03bca
-  ExpoKeepAwake: 69b59d0a8d2b24de9f82759c39b3821fec030318
-  ExpoModulesCore: 089e1ac0f0edee4dd0af0eb4e3f7b44d72cc418d
+  ExpoKeepAwake: f8aae9b3d48116f253418cde831cf71af424d563
+  ExpoModulesCore: 9fc91eeaffce54dc29350ed9e290d9c9a245a0c2
   EXSplashScreen: 3e989924f61a8dd07ee4ea584c6ba14be9b51949
   FBLazyVector: affa4ba1bfdaac110a789192f4d452b053a86624
   FBReactNativeSpec: fe8b5f1429cfe83a8d72dc8ed61dc7704cac8745
@@ -498,6 +503,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: 8e5c8c5d17af641f306d7380d8d0fe9b3c142c48
   React-runtimeexecutor: 7401c4a40f8728fd89df4a56104541b760876117
   ReactCommon: c9246996e73bf75a2c6c3ff15f1e16707cdc2da9
+  RealmJS: 43fc7bfb83229c8a2755cb34f71f769c97b7b581
   RNScreens: 34cc502acf1b916c582c60003dc3089fa01dc66d
   Yoga: eca980a5771bf114c41a754098cd85e6e0d90ed7
 
